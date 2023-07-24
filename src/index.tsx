@@ -10,6 +10,7 @@ import {
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Offer from "./pages/offer/Offer";
+import AddOffer from "./pages/addingoffer/AddOffer";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: "register",
         element: <Register/>
+    },
+    {
+        path: "offers",
+        element: <AddOffer/>
     },
     {
         path: "offers/:id",

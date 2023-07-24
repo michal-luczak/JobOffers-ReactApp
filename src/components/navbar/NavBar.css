@@ -1,0 +1,62 @@
+.App-header {
+    background-color: #282c34;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.App-header h1 {
+    color: white;
+}
+
+.App-header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: max-content;
+    gap: 3vw;
+    margin-right: 2vw;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-items: center;
+}
+
+.App-header ul li{
+    border-radius: 10px;
+    padding: 0.4rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.App-header ul li:nth-child(3) {
+    background: #5eb3c9;
+    box-shadow: 0 0 10px #5eb3c9,
+    0 0 25px #5eb3c9;
+    transition: .5s;
+}
+
+.App-header ul li:nth-child(3):hover {
+    background: #5eb3c9;
+    box-shadow: 0 0 10px #5eb3c9,
+    0 0 25px #5eb3c9, 0 0 25px #5eb3c9,
+    0 0 25px #5eb3c9, 0 0 25px #5eb3c9;
+    transition: .5s;
+}
+
+.authorization {
+    display: flex;
+    background-color: #181a1f;
+    border-radius: 15px;
+}
+
+.authorization li:nth-child(2) {
+    background: #5eb3c9;
+}
+
+.Logo-and-name {
+    width: max-content;
+    display: flex;
+}
