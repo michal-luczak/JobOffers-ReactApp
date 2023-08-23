@@ -1,14 +1,8 @@
 import NavBar from "../../components/navbar/NavBar";
-import {AiOutlineLink} from "react-icons/ai";
 import "./AddOffer.css"
-import {HiOutlineBuildingOffice2} from "react-icons/hi2";
-import {GiReceiveMoney} from "react-icons/gi";
-import {IoIosMan} from "react-icons/io";
 import React, {useContext, useEffect, useRef, useState} from "react";
 import AuthContext from "../../context/AuthProvider";
 import axios from "../../api/axios";
-import {useNavigate} from "react-router-dom";
-import setShowAlert from "../../components/navbar/NavBar"
 import {AxiosError} from "axios";
 
 export default function AddOffer() {
