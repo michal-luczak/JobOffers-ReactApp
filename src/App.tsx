@@ -1,16 +1,21 @@
 import React from 'react';
-import './App.css';
-import Offers from './components/offer/Offers'
-import NavBar from "./components/navbar/NavBar";
+import {Route, Routes} from "react-router-dom";
+import Home from "./pages/Home";
+import RequireAuth from "./components/RequireAuth";
+import Login from "./pages/authorization/login/Login";
+import Register from "./pages/authorization/register/Register";
+import AddOffer from "./pages/addingoffer/AddOffer";
 
 export default function App() {
 
     return (
-        <div className="App">
-            <NavBar />
-            <section>
-                <Offers />
-            </section>
-        </div>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route element={<RequireAuth/>}>
+                <Route path="/offers/new" element={<AddOffer/>}></Route>
+            </Route>
+        </Routes>
     );
 }

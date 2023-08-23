@@ -1,0 +1,91 @@
+.AddOffer-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 12.5rem;
+}
+
+.AddOffer-form {
+    width: 600px;
+    height: max-content;
+    padding-bottom: 2rem;
+    -webkit-box-shadow: 0 0 25px -11px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0 0 25px -11px rgba(66, 68, 90, 1);
+    box-shadow: 0 0 25px -11px rgba(66, 68, 90, 1);
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    width: 65%;
+    margin: 1.5rem auto 1.5rem auto;
+    padding: 1rem 0.4rem 1rem 3rem;
+    border-radius: 1rem;
+    border: 1px solid darkgray;
+    outline: none;
+    font-size: 1rem;
+}
+
+.new-offer-title {
+    margin-top: 0;
+    height: 100px;
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #282c34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.errmsg {
+    width: 85%;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.successmsg {
+    width: 85%;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: #8aff6c;
+    color: #4aa425;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-icon {
+    position: relative;
+    left: -435px;
+    top: 9px;
+    color: #5eb3c9;
+}
+
+.add-offer-button {
+    background-color: #6bcee7;
+    width: 55%;
+    height: 3rem;
+    border-radius: 2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: .5s;
+}
+
+.add-offer-button:hover {
+    transform: translateY(-2px) translateX(-2px);
+    -webkit-box-shadow: 11px 9px 27px -21px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 11px 9px 27px -21px rgba(66, 68, 90, 1);
+    box-shadow: 11px 9px 27px -21px rgba(66, 68, 90, 1);
+}
+

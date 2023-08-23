@@ -4,10 +4,11 @@ import companyIcon from './companyIcon.png';
 import salaryIcon from './salaryIcon.png';
 
 interface Offer {
-    userId: number,
-    id: number,
-    title: string,
-    completed: boolean
+    uniqueID: string,
+    url: number,
+    companyName: string,
+    jobName: string,
+    salary: string
 }
 
 export default function Offers() {
@@ -19,7 +20,7 @@ export default function Offers() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+            const response = await fetch("http://localhost:8000/offers");
             const jsonData = await response.json();
             setOffers(jsonData);
         } catch (error) {
@@ -31,17 +32,17 @@ export default function Offers() {
         <ul id="offers-list">
             {offers && offers.map((offer) => (
                 <li>
-                    <a className="offer-link" href="/offers/1">
+                    <a className="offer-link" href={`${offer.url}`}>
                         <div className="offer">
-                            <h5>{offer.title}</h5>
+                            <h5>{offer.jobName}</h5>
                             <div className="offer-info">
                                 <div className="offer-info-low">
                                     <img className="icon" src={companyIcon} alt="company icon"/>
-                                    <p>{offer.title}</p>
+                                    <p>{offer.companyName}</p>
                                 </div>
                                 <div className="offer-info-low">
                                     <img className="icon" src={salaryIcon} alt="company icon"/>
-                                    <p >{offer.title}</p>
+                                    <p >{offer.salary}</p>
                                 </div>
                             </div>
                         </div>
