@@ -1,10 +1,9 @@
-import {Link, useLocation, useNavigate} from "react-router-dom";
-import React, {useContext, useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+import React, {useContext, useState} from "react";
 import logo from './logo.svg'
 import './NavBar.css';
 import AuthContext from "../../context/AuthProvider";
 import {BiLogOut, BiSolidDownArrow} from "react-icons/bi";
-import {FiSettings} from "react-icons/fi";
 
 const NavBar = () => {
     const authContext = useContext(AuthContext);
