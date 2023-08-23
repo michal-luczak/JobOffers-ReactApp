@@ -1,7 +1,5 @@
 import NavBar from "../../../components/navbar/NavBar";
 import "./Login.css";
-import { AiOutlineUser } from "react-icons/ai";
-import { RiLockPasswordLine } from "react-icons/ri";
 import React, {useRef, useState, useEffect, useContext, createContext} from "react";
 import axios from "../../../api/axios";
 import {AxiosError} from "axios";
