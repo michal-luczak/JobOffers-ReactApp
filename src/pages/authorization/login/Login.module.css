@@ -1,12 +1,12 @@
-.login-section {
+.loginSection {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 12.5rem;
+    margin-top: 200px;
 }
 
-.login-form {
+.loginForm {
     width: 600px;
     height: max-content;
     padding-bottom: 2rem;
@@ -20,12 +20,6 @@
     display: flex;
     flex-direction: column;
 }
-
-/*label {*/
-/*    margin-left: -300px;*/
-/*    margin-bottom: -1rem;*/
-/*    font-size: 1.4rem;*/
-/*}*/
 
 .errmsg {
     width: 85%;
@@ -67,7 +61,7 @@
     text-decoration: underline;
 }
 
-.success-title {
+.successTitle {
     text-align: center;
     border-radius: 2rem 2rem 0 0;
     background-color: #282c34;
@@ -98,17 +92,17 @@
     margin-left: 0.25rem;
 }
 
-.input-field {
-    width: 65%;
+.inputField {
+    width: 55%;
     margin: 1rem auto 1rem auto;
-    padding: 0.4rem 2rem 2rem 3rem;
+    padding: 1rem 3.5rem;
     border-radius: 1rem;
     border: 1px solid darkgray;
     outline: none;
     font-size: 1rem;
 }
 
-.login-title {
+.loginTitle {
     margin-top: 0;
     height: 100px;
     width: 100%;
@@ -120,24 +114,24 @@
     color: white;
 }
 
-.register-link {
+.registerLink {
     margin-top: 1rem;
     font-size: 1.2rem;
 }
 
-.register-link a {
+.registerLink a {
     color: #5eb3c9;
     text-decoration: underline;
 }
 
-.input-icon {
+.inputIcon {
     position: relative;
     left: -435px;
     top: 9px;
     color: #5eb3c9;
 }
 
-.login-button {
+.loginButton {
     background-color: #6bcee7;
     width: 55%;
     height: 3rem;
@@ -149,19 +143,66 @@
     transition: .5s;
 }
 
-.login-button:disabled {
+.loginButton:disabled {
     transform: none;
     background-color: #b4b4b4;
 }
 
-.login-button:disabled:hover {
+.loginButton:disabled:hover {
     transform: none;
 }
 
-.login-button:hover {
+.loginButton:hover {
     transform: translateY(-2px) translateX(-2px);
     -webkit-box-shadow: 11px 9px 27px -21px rgba(66, 68, 90, 1);
     -moz-box-shadow: 11px 9px 27px -21px rgba(66, 68, 90, 1);
     box-shadow: 11px 9px 27px -21px rgba(66, 68, 90, 1);
+}
+
+@media (max-width: 800px) {
+    .loginForm {
+        width: 400px;
+    }
+
+    label {
+        margin-left: 20px;
+        margin-bottom: -1rem;
+        font-size: 1.5rem;
+    }
+
+    a {
+        font-size: 1.5rem;
+    }
+
+    .inputField {
+        padding-left: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .loginTitle {
+        display: none;
+    }
+
+    .loginForm {
+        box-shadow: none;
+    }
+
+    .loginForm {
+        width: 90%;
+    }
+
+    .inputField {
+        width: 70%;
+    }
+
+    label {
+        margin-left: -30px;
+    }
+}
+
+@media (max-width: 450px) {
+
 }
 

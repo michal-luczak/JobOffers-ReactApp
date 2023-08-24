@@ -1,6 +1,6 @@
-.App-header {
+.AppHeader {
     background-color: #282c34;
-    height: 6rem;
+    height: 96px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -16,12 +16,12 @@ li {
     display: flex;
 }
 
-.App-header h1 {
+.AppHeader h1 {
     display: flex;
     align-items: center;
 }
 
-.main-bar {
+.mainBar {
     list-style: none;
     display: flex;
     justify-content: space-around;
@@ -38,7 +38,7 @@ a {
     color: white;
 }
 
-.App-header ul li:nth-child(3) {
+.AppHeader ul li:nth-child(3) {
     background: #5eb3c9;
     box-shadow: 0 0 10px #5eb3c9,
     0 0 25px #5eb3c9;
@@ -47,7 +47,7 @@ a {
     padding: 0.4rem;
 }
 
-.App-header ul li:nth-child(3):hover {
+.AppHeader ul li:nth-child(3):hover {
     background: #5eb3c9;
     box-shadow: 0 0 10px #5eb3c9,
     0 0 25px #5eb3c9, 0 0 25px #5eb3c9,
@@ -73,13 +73,13 @@ a {
     background: #5eb3c9;
 }
 
-.Logo-and-name {
+.LogoAndName {
     width: max-content;
     display: flex;
     margin-left: 3rem;
 }
 
-.menu-dropdown {
+.menuDropdown {
     position: absolute;
     top: 5rem;
     right: 0.1rem;
@@ -90,7 +90,7 @@ a {
     padding: 0.5rem;
 }
 
-.menu-dropdown svg {
+.menuDropdown svg {
     margin-top: 3%;
     margin-right: 1rem;
 }
@@ -143,7 +143,7 @@ a {
         width: 70px;
     }
 
-    .main-bar {
+    .mainBar {
         top: 100%;
         right: 0;
         margin: 0;
@@ -153,16 +153,16 @@ a {
         padding: 1rem;
         height: 400px;
         width: 400px;
-        transform: translate(400%);
+        transform: translate(0);
     }
 
     .active {
-        transform: translate(0);
+        display: none;
     }
 }
 
 @media (max-width: 800px) {
-    * {
+    p {
       font-size: 1rem;
     }
 
@@ -177,40 +177,48 @@ a {
 
 @media (max-width: 500px) {
 
+    label {
+        font-size: 1.3rem;
+    }
+
+    .loginLink {
+        font-size: 1rem;
+    }
+
     .line {
         height: 5px;
         width: 50px;
     }
 
-    .App-header {
+    .AppHeader {
         padding-right: 1rem;
     }
 
-    .Logo-and-name {
+    .LogoAndName {
         margin-left: 1rem;
     }
 
-    h1 {
+    .LogoAndName h1 {
         font-size: 1.3rem;
     }
 
-    .main-bar {
+    .mainBar {
         height: 350px;
         width: 350px;
     }
 
-    .main-bar li a {
+    .mainBar li a {
         font-size: 1.5rem;
     }
 }
 
 @media (max-width: 400px) {
-    .main-bar {
+    .mainBar {
         height: 300px;
         width: 300px;
     }
 
-    .main-bar li a {
+    .mainBar li a {
         font-size: 1.5rem;
     }
 }

@@ -1,5 +1,5 @@
 import NavBar from "../../../components/navbar/NavBar";
-import "./Login.css";
+import LoginCss from "./Login.module.css";
 import React, {useRef, useState, useEffect, useContext, createContext} from "react";
 import axios from "../../../api/axios";
 import {AxiosError} from "axios";
@@ -72,12 +72,12 @@ const Login = () => {
     return (
         <>
             <NavBar/>
-            <section className="login-section">
-                <form onSubmit={handleSubmit} className="login-form">
-                    <h1 className="login-title">Login</h1>
+            <section className={LoginCss.loginSection}>
+                <form onSubmit={handleSubmit} className={LoginCss.loginForm}>
+                    <h1 className={LoginCss.loginTitle}>Login</h1>
                     <label htmlFor="username">Username:</label>
                     <input
-                        className="input-field"
+                        className={LoginCss.inputField}
                         type="text"
                         required
                         id="username"
@@ -89,7 +89,7 @@ const Login = () => {
                     {/*<AiOutlineUser className="input-icon"/>*/}
                     <label htmlFor="password">Password:</label>
                     <input
-                        className="input-field"
+                        className={LoginCss.inputField}
                         type="password"
                         required
                         id="password"
@@ -97,13 +97,13 @@ const Login = () => {
                         value={password}
                     />
                     {/*<RiLockPasswordLine className="input-icon"/>*/}
-                    <button className="login-button">Sign In</button>
-                    <div className="register-link">
+                    <button className={LoginCss.loginButton}>Sign In</button>
+                    <div className={LoginCss.registerLink}>
                         You have no account? <a href="/register">Sign up</a>
                     </div>
                     <p
                         ref={errRef}
-                        className={errMsg ? "errmsg" : "offscreen"}
+                        className={errMsg ? LoginCss.errmsg : LoginCss.offscreen}
                         aria-live="assertive"
                     >
                         {errMsg}

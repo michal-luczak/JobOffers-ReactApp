@@ -2,7 +2,7 @@ import NavBar from "../../../components/navbar/NavBar";
 import React, {useEffect, useRef, useState} from "react";
 import {faCheck, faInfoCircle, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import "./Register.css"
+import RegisterCss from "./Register.module.css"
 import axios from "../../../api/axios";
 import {AxiosError} from "axios";
 
@@ -95,11 +95,11 @@ const Register = () => {
             {success ? (
                 <>
                     <NavBar/>
-                    <section className="register-section">
-                        <div className="success-title">
+                    <section className={RegisterCss.registerSection}>
+                        <div className={RegisterCss.successTitle}>
                             <h1>Success!</h1>
                         </div>
-                        <div className="success">
+                        <div className={RegisterCss.success}>
                             <p>
                                 <a href="/login">Log in!</a>
                             </p>
@@ -109,20 +109,20 @@ const Register = () => {
             ) : (
                 <>
                     <NavBar/>
-                    <section className="register-section">
-                        <form className="register-form" onSubmit={handleSubmit}>
-                            <h1 className="register-title">Register</h1>
+                    <section className={RegisterCss.registerSection}>
+                        <form className={RegisterCss.registerForm} onSubmit={handleSubmit}>
+                            <h1 className={RegisterCss.registerTitle}>Register</h1>
                             <label htmlFor="username">
                                 Username:
-                                <span className={validName ? "valid" : "hide"}>
+                                <span className={validName ? RegisterCss.valid : RegisterCss.hide}>
                                     <FontAwesomeIcon icon={faCheck}/>
                                 </span>
-                                <span className={validName || !user ? "hide" : "invalid"}>
+                                <span className={validName || !user ? RegisterCss.hide : RegisterCss.invalid}>
                                     <FontAwesomeIcon icon={faTimes}/>
                                 </span>
                             </label>
                             <input type="text"
-                                   className="input-field"
+                                   className={RegisterCss.inputField}
                                    id="username"
                                    ref={userRef}
                                    autoComplete="off"
@@ -132,7 +132,7 @@ const Register = () => {
                                    aria-describedby="uidnote"
                                    onFocus={() => setUserFocus(true)}
                                    onBlur={() => setUserFocus(false)}/>
-                            <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
+                            <p id="uidnote" className={userFocus && user && !validName ? RegisterCss.instructions : RegisterCss.offscreen}>
                                 <FontAwesomeIcon icon={faInfoCircle}/>
                                 5 to 25 characters. <br/>
                                 Must begin with a letter. <br/>
@@ -141,15 +141,15 @@ const Register = () => {
                             {/*<AiOutlineUser className="input-icon"/>*/}
                             <label htmlFor="password">
                                 Password:
-                                <span className={validPassword ? "valid" : "hide"}>
+                                <span className={validPassword ? RegisterCss.valid : RegisterCss.hide}>
                                     <FontAwesomeIcon icon={faCheck}/>
                                 </span>
-                                <span className={validPassword || !password ? "hide" : "invalid"}>
+                                <span className={validPassword || !password ? RegisterCss.hide : RegisterCss.invalid}>
                                     <FontAwesomeIcon icon={faTimes}/>
                                 </span>
                             </label>
                             <input type="password"
-                                   className="input-field"
+                                   className={RegisterCss.inputField}
                                    id="password"
                                    autoComplete="off"
                                    onChange={(e) => setPassword(e.target.value)}
@@ -158,7 +158,7 @@ const Register = () => {
                                    aria-describedby="pwdnote"
                                    onFocus={() => setPasswordFocus(true)}
                                    onBlur={() => setPasswordFocus(false)}/>
-                            <p id="pwdnote" className={passwordFocus && !validPassword ? "instructions" : "offscreen"}>
+                            <p id="pwdnote" className={passwordFocus && !validPassword ? RegisterCss.instructions : RegisterCss.offscreen}>
                                 <FontAwesomeIcon icon={faInfoCircle}/>
                                 8 to 24 characters. <br/>
                                 Must includes uppercase and lowercase letters,<br/>
@@ -172,15 +172,15 @@ const Register = () => {
                             {/*<RiLockPasswordLine className="input-icon"/>*/}
                             <label htmlFor={"confirm_pwd"}>
                                 Confirm password:
-                                <span className={validMatch && matchPassword ? "valid" : "hide"}>
+                                <span className={validMatch && matchPassword ? RegisterCss.valid : RegisterCss.hide}>
                                     <FontAwesomeIcon icon={faCheck}/>
                                 </span>
-                                <span className={validMatch || !matchPassword ? "hide" : "invalid"}>
+                                <span className={validMatch || !matchPassword ? RegisterCss.hide : RegisterCss.invalid}>
                                     <FontAwesomeIcon icon={faTimes}/>
                                 </span>
                             </label>
                             <input type="password"
-                                   className="input-field"
+                                   className={RegisterCss.inputField}
                                    id="confirm_pwd"
                                    autoComplete="off"
                                    onChange={(e) => setMatchPassword(e.target.value)}
@@ -189,18 +189,18 @@ const Register = () => {
                                    aria-describedby="confirmnote"
                                    onFocus={() => setMatchPasswordFocus(true)}
                                    onBlur={() => setMatchPasswordFocus(false)}/>
-                            <p id="confirmnote" className={matchPasswordFocus && !validMatch ? "instructions" : "hide"}>
+                            <p id="confirmnote" className={matchPasswordFocus && !validMatch ? RegisterCss.instructions : RegisterCss.hide}>
                                 <FontAwesomeIcon icon={faInfoCircle}/>
                                 Must match the first password input field.
                             </p>
                             {/*<RiLockPasswordLine className="input-icon"/>*/}
-                            <button className="sign-up-button" disabled={!validName || !validPassword || !validMatch}>
+                            <button className={RegisterCss.signUpButton} disabled={!validName || !validPassword || !validMatch}>
                                 Sign up
                             </button>
-                            <div className="register-link">
+                            <div className={RegisterCss.loginLink}>
                                 You have an account? <a href="/login">Log in</a>
                             </div>
-                            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live={"assertive"}>
+                            <p ref={errRef} className={errMsg ? RegisterCss.errmsg : RegisterCss.offscreen} aria-live={"assertive"}>
                                 {errMsg}
                             </p>
                         </form>

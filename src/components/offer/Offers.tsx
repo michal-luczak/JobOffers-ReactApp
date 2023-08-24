@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import './Offers.css';
+import './Offers.module.css';
 import companyIcon from './companyIcon.png';
 import salaryIcon from './salaryIcon.png';
 

@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import React, {useContext, useState} from "react";
 import logo from './logo.svg'
-import './NavBar.css';
+import NavbarCss from './NavBar.module.css';
 import AuthContext from "../../context/AuthProvider";
 import {BiLogOut, BiSolidDownArrow} from "react-icons/bi";
 
@@ -14,28 +14,28 @@ const NavBar = () => {
     };
 
     const handleClick = () => {
-        const burgerButton = document.querySelector('.burger');
-        const menu = document.querySelector('.main-bar');
+        const burgerButton = document.querySelector('.' + NavbarCss.burger);
+        const menu = document.querySelector('.' + NavbarCss.mainBar);
 
         if (!menu || !burgerButton) {
             return;
         }
 
-        if (menu.classList.contains("active")) {
-            menu.classList.remove("active");
+        if (menu.classList.contains(NavbarCss.active)) {
+            menu.classList.remove(NavbarCss.active);
         } else {
-            menu.classList.toggle("active");
+            menu.classList.toggle(NavbarCss.active);
         }
     }
 
     return(
         <>
-            <header className="App-header">
-                <Link to="/" className="Logo-and-name">
-                    <img src={logo} className="App-logo" alt="logo"/>
+            <header className={NavbarCss.AppHeader}>
+                <Link to="/" className={NavbarCss.LogoAndName}>
+                    <img src={logo} alt="logo"/>
                     <h1>Job Offers</h1>
                 </Link>
-                <ul className="main-bar">
+                <ul className={NavbarCss.mainBar}>
                     <li>
                         <Link to="/">Home</Link>
                     </li>
@@ -46,15 +46,15 @@ const NavBar = () => {
                         <Link to="https://michal-luczak.pl">Back to personal Website</Link>
                     </li>
                     { authContext?.isLoggedIn
-                        ? <li className="username">
+                        ? <li className={NavbarCss.username}>
                             <p onClick={() => setIsLoginOpen(!isLoginOpen)}>{authContext.username} <BiSolidDownArrow fontSize={"1rem"}/></p>
                             {isLoginOpen && (
-                                <ul className="menu-dropdown">
+                                <ul className={NavbarCss.menuDropdown}>
                                     <li onClick={handleLogout}><BiLogOut/>Logout</li>
                                 </ul>
                             )}
                         </li>
-                        : <li className="authorization">
+                        : <li className={NavbarCss.authorization}>
                             <li>
                                 <Link to="/login">Log in</Link>
                             </li>
@@ -64,10 +64,10 @@ const NavBar = () => {
                         </li>
                     }
                 </ul>
-                <button className="burger" onClick={() => handleClick()}>
-                    <div className="line"></div>
-                    <div className="line"></div>
-                    <div className="line"></div>
+                <button className={NavbarCss.burger} onClick={() => handleClick()}>
+                    <div className={NavbarCss.line}></div>
+                    <div className={NavbarCss.line}></div>
+                    <div className={NavbarCss.line}></div>
                 </button>
             </header>
         </>

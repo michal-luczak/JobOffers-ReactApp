@@ -1,5 +1,5 @@
 import NavBar from "../../components/navbar/NavBar";
-import "./AddOffer.css"
+import "./AddOffer.module.css"
 import React, {useContext, useEffect, useRef, useState} from "react";
 import AuthContext from "../../context/AuthProvider";
 import axios from "../../api/axios";
