@@ -1,5 +1,5 @@
-import {Link} from "react-router-dom";
-import React, {useContext, useState} from "react";
+import {Link, useLocation} from "react-router-dom";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import logo from './logo.svg'
 import NavbarCss from './NavBar.module.css';
 import AuthContext from "../../context/AuthProvider";
@@ -8,16 +8,42 @@ import {BiLogOut, BiSolidDownArrow} from "react-icons/bi";
 const NavBar = () => {
     const authContext = useContext(AuthContext);
     const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const location = useLocation();
 
     const handleLogout = () => {
         authContext?.logout();
     };
 
-    const handleClick = () => {
-        const burgerButton = document.querySelector('.' + NavbarCss.burger);
+    useEffect(() => {
         const menu = document.querySelector('.' + NavbarCss.mainBar);
+        menu?.classList.add(NavbarCss.active);
+    }, [location]);
 
-        if (!menu || !burgerButton) {
+    useEffect(() => {
+        const menu = document.querySelector('.' + NavbarCss.mainBar);
+        const burger = document.querySelector('.' + NavbarCss.burger);
+
+        const handleClickOutside = (event: MouseEvent) => {
+            if (!menu || !burger) {
+                return
+            }
+            if (!menu.contains(event.target as Node) && !burger.contains(event.target as Node)) {
+                menu.classList.add(NavbarCss.active);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const handleClick = () => {
+        const menu = document.querySelector('.' + NavbarCss.mainBar);
+        const burger = document.querySelector('.' + NavbarCss.burger);
+
+        if (!menu || !burger) {
             return;
         }
 

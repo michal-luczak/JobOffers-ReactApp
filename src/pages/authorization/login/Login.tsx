@@ -1,11 +1,11 @@
 import NavBar from "../../../components/navbar/NavBar";
-import LoginCss from "./Login.module.css";
 import React, {useRef, useState, useEffect, useContext, createContext} from "react";
 import axios from "../../../api/axios";
 import {AxiosError} from "axios";
 import {useNavigate, useLocation} from "react-router-dom";
 import Cookies from 'js-cookie';
 import {useAuth} from "../../../context/AuthProvider";
+import FormCss from "../../Form.module.css";
 
 const LOGIN_URL = '/token';
 
@@ -45,7 +45,6 @@ const Login = () => {
                 }
             );
             const token = response?.data?.token;
-            console.log(token);
             Cookies.set('jwtToken', token, { httpOnly: true });
             login(user, token);
             setUser('');
@@ -72,12 +71,12 @@ const Login = () => {
     return (
         <>
             <NavBar/>
-            <section className={LoginCss.loginSection}>
-                <form onSubmit={handleSubmit} className={LoginCss.loginForm}>
-                    <h1 className={LoginCss.loginTitle}>Login</h1>
+            <section className={FormCss.formSection}>
+                <form onSubmit={handleSubmit} className={FormCss.form}>
+                    <h1 className={FormCss.title}>Login</h1>
                     <label htmlFor="username">Username:</label>
                     <input
-                        className={LoginCss.inputField}
+                        className={FormCss.inputField}
                         type="text"
                         required
                         id="username"
@@ -89,7 +88,7 @@ const Login = () => {
                     {/*<AiOutlineUser className="input-icon"/>*/}
                     <label htmlFor="password">Password:</label>
                     <input
-                        className={LoginCss.inputField}
+                        className={FormCss.inputField}
                         type="password"
                         required
                         id="password"
@@ -97,13 +96,13 @@ const Login = () => {
                         value={password}
                     />
                     {/*<RiLockPasswordLine className="input-icon"/>*/}
-                    <button className={LoginCss.loginButton}>Sign In</button>
-                    <div className={LoginCss.registerLink}>
+                    <button className={FormCss.submitButton}>Sign In</button>
+                    <div className={FormCss.link}>
                         You have no account? <a href="/register">Sign up</a>
                     </div>
                     <p
                         ref={errRef}
-                        className={errMsg ? LoginCss.errmsg : LoginCss.offscreen}
+                        className={errMsg ? FormCss.errmsg : FormCss.hide}
                         aria-live="assertive"
                     >
                         {errMsg}

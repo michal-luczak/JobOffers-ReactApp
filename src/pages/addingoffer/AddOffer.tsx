@@ -1,9 +1,10 @@
 import NavBar from "../../components/navbar/NavBar";
-import "./AddOffer.module.css"
+import AddOfferCss from "./AddOffer.module.css"
 import React, {useContext, useEffect, useRef, useState} from "react";
 import AuthContext from "../../context/AuthProvider";
 import axios from "../../api/axios";
 import {AxiosError} from "axios";
+import FormCss from "../Form.module.css"
 
 export default function AddOffer() {
     const authContext = useContext(AuthContext);
@@ -65,11 +66,11 @@ export default function AddOffer() {
     return (
         <>
             <NavBar/>
-            <section className="AddOffer-section">
-                <form className="AddOffer-form" onSubmit={handleSubmit}>
-                    <h1 className="new-offer-title">New offer</h1>
+            <section className={FormCss.formSection}>
+                <form className={FormCss.form} onSubmit={handleSubmit}>
+                    <h1 className={FormCss.title}>New offer</h1>
                     <label htmlFor="jobTitle">Job title:</label>
-                    <input className="input-field"
+                    <input className={FormCss.inputField}
                            type="text"
                            id="jobTitle"
                            required
@@ -80,7 +81,7 @@ export default function AddOffer() {
                     />
                     {/*<IoIosMan className="input-icon"/>*/}
                     <label htmlFor="companyName">Company name:</label>
-                    <input className="input-field"
+                    <input className={FormCss.inputField}
                            type="text"
                            id="companyName"
                            required
@@ -91,7 +92,7 @@ export default function AddOffer() {
                     />
                     {/*<HiOutlineBuildingOffice2 className="input-icon"/>*/}
                     <label htmlFor="salary">Salary:</label>
-                    <input className="input-field"
+                    <input className={FormCss.inputField}
                            type="text"
                            id="salary"
                            required
@@ -102,7 +103,7 @@ export default function AddOffer() {
                     />
                     {/*<GiReceiveMoney className="input-icon"/>*/}
                     <label htmlFor="offerUrl">Url:</label>
-                    <input className="input-field"
+                    <input className={FormCss.inputField}
                            type="text"
                            id="offerUrl"
                            required
@@ -112,10 +113,10 @@ export default function AddOffer() {
                            })}
                     />
                     {/*<AiOutlineLink className="input-icon"/>*/}
-                    <button className="add-offer-button" type="submit">Add new offer</button>
+                    <button className={FormCss.submitButton} type="submit">Add new offer</button>
                     <p
                         ref={errRef}
-                        className={isSuccess ? "successmsg" : msg ? "errmsg" : "hide"}
+                        className={isSuccess ? AddOfferCss.successMsg : msg ? FormCss.errmsg : FormCss.hide}
                         aria-live="assertive"
                     >
                         {msg}

@@ -1,4 +1,4 @@
-#offers-list {
+.offersList {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -31,13 +31,13 @@
     box-shadow: 10px 10px 37px -5px rgba(99, 101, 134, 1);
 }
 
-.offer-info {
+.offerInfo {
     display: flex;
     justify-content: space-between;
     margin: 0 1rem 0 1rem;
 }
 
-.offer-info-low {
+.offerInfoLow {
     display: flex;
     align-items: center;
     gap: .4rem;
@@ -49,7 +49,7 @@
 }
 
 @media (max-width: 500px) {
-    .offer-info {
+    .offerInfo {
         flex-direction: column;
         align-items: center;
     }

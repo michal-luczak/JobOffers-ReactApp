@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import './Offers.module.css';
+import OffersCss from './Offers.module.css';
 import companyIcon from './companyIcon.png';
 import salaryIcon from './salaryIcon.png';
 
@@ -29,19 +29,19 @@ export default function Offers() {
     };
 
     return (
-        <ul id="offers-list">
+        <ul className={OffersCss.offersList}>
             {offers && offers.map((offer) => (
                 <li>
-                    <a className="offer-link" href={`${offer.url}`}>
-                        <div className="offer">
+                    <a href={`${offer.url}`}>
+                        <div className={OffersCss.offer}>
                             <h5>{offer.jobName}</h5>
-                            <div className="offer-info">
-                                <div className="offer-info-low">
-                                    <img className="icon" src={companyIcon} alt="company icon"/>
+                            <div className={OffersCss.offerInfo}>
+                                <div className={OffersCss.offerInfoLow}>
+                                    <img className={OffersCss.icon} src={companyIcon} alt="company icon"/>
                                     <p>{offer.companyName}</p>
                                 </div>
-                                <div className="offer-info-low">
-                                    <img className="icon" src={salaryIcon} alt="company icon"/>
+                                <div className={OffersCss.offerInfoLow}>
+                                    <img className={OffersCss.icon} src={salaryIcon} alt="company icon"/>
                                     <p >{offer.salary}</p>
                                 </div>
                             </div>
