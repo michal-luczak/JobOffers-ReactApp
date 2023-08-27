@@ -2,6 +2,7 @@
   "name": "joboffers-reactfrontendapp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/job-offers/",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",

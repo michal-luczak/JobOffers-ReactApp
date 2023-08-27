@@ -58,7 +58,7 @@ const NavBar = () => {
         <>
             <header className={NavbarCss.AppHeader}>
                 <Link to="/" className={NavbarCss.LogoAndName}>
-                    <img src={logo} alt="logo"/>
+                    <img src={logo} alt="logo" className={NavbarCss.logo}/>
                     <h1>Job Offers</h1>
                 </Link>
                 <ul className={NavbarCss.mainBar}>
@@ -69,7 +69,7 @@ const NavBar = () => {
                         <Link to="/offers/new">Add Offer</Link>
                     </li>
                     <li>
-                        <Link to="https://michal-luczak.pl">Back to personal Website</Link>
+                        <a href="https://michal-luczak.pl/job-offers/api/swagger-ui/index.html">API - Swagger UI</a>
                     </li>
                     { authContext?.isLoggedIn
                         ? <li className={NavbarCss.username}>

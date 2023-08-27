@@ -100,7 +100,7 @@ const Register = () => {
                         </div>
                         <div className={FormCss.success}>
                             <p>
-                                <a href="/login">Log in!</a>
+                                <a href="/job-offers/login">Log in!</a>
                             </p>
                         </div>
                     </section>

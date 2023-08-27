@@ -20,7 +20,7 @@ export default function Offers() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch("http://localhost:8000/offers");
+            const response = await fetch("https://michal-luczak.pl/job-offers/api/offers");
             const jsonData = await response.json();
             setOffers(jsonData);
         } catch (error) {

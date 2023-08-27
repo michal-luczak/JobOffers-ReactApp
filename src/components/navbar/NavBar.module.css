@@ -3,7 +3,7 @@
     height: 96px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
     padding-right: 3rem;
     position: fixed;
     z-index: 2;
@@ -76,7 +76,7 @@ a {
 .LogoAndName {
     width: max-content;
     display: flex;
-    margin-left: 3rem;
+    margin-left: 4rem;
 }
 
 .menuDropdown {
@@ -122,6 +122,7 @@ a {
 
 .burger {
     display: none;
+    cursor: pointer;
 }
 
 @media (max-width: 1200px) {
@@ -198,6 +199,11 @@ a {
         margin-left: 1rem;
     }
 
+    .logo {
+        height: 70px;
+        margin: auto 0 auto 0;
+    }
+
     .LogoAndName h1 {
         font-size: 1.3rem;
     }
@@ -220,6 +226,10 @@ a {
 
     .mainBar li a {
         font-size: 1.5rem;
+    }
+
+    .burger {
+        margin-right: 1rem;
     }
 }
 
